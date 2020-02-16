@@ -15,7 +15,7 @@ public class User {
 
     private Long id;
 
-    private String userName;
+    private String username;
 
     /** 用户昵称 */
     private String nickName;
