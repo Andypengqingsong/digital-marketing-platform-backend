@@ -1,0 +1,19 @@
+project:
+  version: @project.version@
+server:
+  port: 9091
+xxl:
+  job:
+    admin:
+      addresses: http://127.0.0.1:8088
+    executor:
+      appname: ${spring.application.name}
+      port: 19091
+#logging:
+#  level:
+#    root: debug
+feign:
+  sentinel:
+    enabled: true
+  httpclient:
+    connection-timeout: 5000

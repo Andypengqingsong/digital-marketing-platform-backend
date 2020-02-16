@@ -1,0 +1,26 @@
+#spring:
+#  application:
+#    name: api-gateway
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 10.233.23.49:8849
+#        namespace: d38d583b-42c0-4dcc-ae9f-8693aff98fd7
+#      config:
+#        server-addr: 10.233.23.49:8849
+#        namespace: d38d583b-42c0-4dcc-ae9f-8693aff98fd7
+#        group: ${spring.application.name}
+#        file-extension: yml
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+#        namespace: d38d583b-42c0-4dcc-ae9f-8693aff98fd7
+      config:
+        server-addr: 127.0.0.1:8848
+#        namespace: d38d583b-42c0-4dcc-ae9f-8693aff98fd7
+#        group: ${spring.application.name}
+        file-extension: yml

@@ -1,0 +1,46 @@
+{
+  "groups": [
+    {
+      "name": "gateway",
+      "type": "com.mydataway.api.gateway.GatewayProperties",
+      "sourceType": "com.mydataway.api.gateway.GatewayProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "gateway.check-app-key-exclude-urls",
+      "type": "java.util.Set<java.lang.String>",
+      "sourceType": "com.mydataway.api.gateway.GatewayProperties"
+    },
+    {
+      "name": "gateway.check-app-key-include-urls",
+      "type": "java.util.Set<java.lang.String>",
+      "sourceType": "com.mydataway.api.gateway.GatewayProperties"
+    },
+    {
+      "name": "gateway.check-app-key-service",
+      "type": "java.lang.String",
+      "description": "check appKey服务地址",
+      "sourceType": "com.mydataway.api.gateway.GatewayProperties"
+    },
+    {
+      "name": "gateway.check-token-exclude-urls",
+      "type": "java.util.Set<java.lang.String>",
+      "description": "不需要检查token的url地址集合",
+      "sourceType": "com.mydataway.api.gateway.GatewayProperties"
+    },
+    {
+      "name": "gateway.check-token-include-urls",
+      "type": "java.util.Set<java.lang.String>",
+      "description": "需要检查token的url地址集合",
+      "sourceType": "com.mydataway.api.gateway.GatewayProperties"
+    },
+    {
+      "name": "gateway.check-token-service",
+      "type": "java.lang.String",
+      "description": "check token服务地址",
+      "sourceType": "com.mydataway.api.gateway.GatewayProperties"
+    }
+  ],
+  "hints": []
+}
