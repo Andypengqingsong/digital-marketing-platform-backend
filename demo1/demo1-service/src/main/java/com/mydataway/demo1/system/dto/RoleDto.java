@@ -35,5 +35,4 @@ public class RoleDto {
      */
     private String permission;
 
-    private Date createTime;
 }

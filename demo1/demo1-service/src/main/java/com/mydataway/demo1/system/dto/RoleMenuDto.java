@@ -1,5 +1,6 @@
 package com.mydataway.demo1.system.dto;
 
+import com.mydataway.demo1.system.domain.Menu;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -14,5 +15,26 @@ import java.util.List;
  */
 @Data
 public class RoleMenuDto {
-    List<MenuDto> menuDtos = new ArrayList<>();
+
+    private Long id;
+
+    private String name;
+
+    /**
+     * 数据权限类型 全部 、 本级 、 自定义
+     */
+    private String dataScope = "本级";
+
+    /**
+     * 数值越小，级别越大
+     */
+    private Integer level = 3;
+
+    private String remark;
+
+    /**
+     * 权限
+     */
+    private String permission;
+    List<Menu> menus = new ArrayList<>();
 }
