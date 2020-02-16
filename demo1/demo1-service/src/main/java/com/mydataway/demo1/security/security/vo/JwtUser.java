@@ -3,6 +3,7 @@ package com.mydataway.demo1.security.security.vo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import org.apache.commons.io.filefilter.FalseFileFilter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -30,22 +31,14 @@ public class JwtUser implements UserDetails {
     @JsonIgnore
     private final String password;
 
-    private final String avatar;
-
-    private final String email;
-
     private final String phone;
-
-    private final String dept;
-
-    private final String job;
 
     @JsonIgnore
     private final Collection<GrantedAuthority> authorities;
 
-    private final boolean enabled;
+    private final Integer enabled;
 
-    private Timestamp createTime;
+    private Date createTime;
 
     @JsonIgnore
     private final Date lastPasswordResetDate;
@@ -76,7 +69,7 @@ public class JwtUser implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return enabled;
+        return enabled == 1 ? true:false;
     }
 
     public Collection getRoles() {

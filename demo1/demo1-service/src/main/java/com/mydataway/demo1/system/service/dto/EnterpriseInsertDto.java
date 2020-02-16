@@ -11,7 +11,7 @@ import lombok.Data;
 public class EnterpriseInsertDto {
 
     @ApiModelProperty(value = "id")
-    private String id;
+    private Long id;
 
     @ApiModelProperty(value = "名称", required = true)
     private String name;

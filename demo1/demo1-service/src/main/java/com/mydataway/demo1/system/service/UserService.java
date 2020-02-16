@@ -18,4 +18,6 @@ public interface UserService {
     void update(UserDto userDto);
 
     void delete(Set<Long> ids);
+
+    User queryByName(String name);
 }

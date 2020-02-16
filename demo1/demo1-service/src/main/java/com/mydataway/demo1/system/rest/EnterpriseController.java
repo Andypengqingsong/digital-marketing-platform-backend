@@ -8,8 +8,11 @@ import com.mydataway.demo1.system.domain.Enterprise;
 import com.mydataway.demo1.system.service.EnterpriseService;
 import com.mydataway.demo1.system.service.dto.EnterpriseInsertDto;
 import com.mydataway.demo1.system.service.dto.EnterpriseQueryDto;
+import com.mydataway.demo1.system.service.dto.EnterpriseStatusDto;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModelProperty;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -72,7 +75,15 @@ public class EnterpriseController {
         return new BusinessResponse(CommonResponseEnum.SUCCESS.getCode(),CommonResponseEnum.SUCCESS.getmsg());
     }
 
-
+    @ApiOperation("启用禁用")
+    @PostMapping(value = "/status")
+//    @PreAuthorize("@el.check('enterprise:status')")
+    public BusinessResponse status(@RequestBody EnterpriseStatusDto enterpriseStatusDto){
+        Enterprise enterprise = enterpriseService.queryById(enterpriseStatusDto.getId());
+        enterprise.setStatus(enterpriseStatusDto.getStatus());
+        enterpriseService.updateEnterprise(enterprise);
+        return new BusinessResponse(CommonResponseEnum.SUCCESS.getCode(),CommonResponseEnum.SUCCESS.getmsg());
+    }
 
 
 }

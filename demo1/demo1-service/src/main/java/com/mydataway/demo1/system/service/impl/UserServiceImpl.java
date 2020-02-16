@@ -54,4 +54,9 @@ public class UserServiceImpl implements UserService {
     public void delete(Set<Long> ids) {
         userRepository.deleteBatchIds(ids);
     }
+
+    @Override
+    public User queryByName(String name) {
+        return userRepository.findByUsername(name);
+    }
 }
