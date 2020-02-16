@@ -18,7 +18,7 @@ public class Enterprise {
     private String name;
 
     //全称
-    private String full_name;
+    private String fullName;
 
     //企业编码
     private String number;
