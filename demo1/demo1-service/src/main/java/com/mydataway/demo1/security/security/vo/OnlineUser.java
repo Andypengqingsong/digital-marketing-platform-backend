@@ -18,13 +18,11 @@ public class OnlineUser {
 
     private String nickName;
 
-    private String job;
-
     private String browser;
 
     private String ip;
 
-    private String address;
+//    private String address;
 
     private String key;
 

@@ -5,6 +5,7 @@ import com.mydataway.demo1.security.security.JwtAccessDeniedHandler;
 import com.mydataway.demo1.security.security.JwtAuthenticationEntryPoint;
 import com.mydataway.demo1.security.security.TokenConfigurer;
 import com.mydataway.demo1.security.security.TokenProvider;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -42,6 +43,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final JwtAccessDeniedHandler jwtAccessDeniedHandler;
     private final ApplicationContext applicationContext;
 
+    @Value("${spring.application.name}")
+    private String projectName;
+
     public SecurityConfig(TokenProvider tokenProvider, JwtAuthenticationEntryPoint authenticationErrorHandler, JwtAccessDeniedHandler jwtAccessDeniedHandler, ApplicationContext applicationContext) {
         this.tokenProvider = tokenProvider;
 //        this.corsFilter = corsFilter;
@@ -71,7 +75,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             HandlerMethod handlerMethod = infoEntry.getValue();
             AnonymousAccess anonymousAccess = handlerMethod.getMethodAnnotation(AnonymousAccess.class);
             if (null != anonymousAccess) {
-                anonymousUrls.addAll(infoEntry.getKey().getPatternsCondition().getPatterns());
+                infoEntry.getKey().getPatternsCondition().getPatterns().forEach(str->{
+                    anonymousUrls.add("/"+projectName+str);
+                });
             }
         }
         httpSecurity

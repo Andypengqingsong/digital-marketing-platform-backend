@@ -17,10 +17,10 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 10.8.0.26:8848
+        server-addr: 10.8.0.14:8848
 #        namespace: d38d583b-42c0-4dcc-ae9f-8693aff98fd7
       config:
-        server-addr: 10.8.0.26:8848
+        server-addr: 10.8.0.14:8848
 #        namespace: d38d583b-42c0-4dcc-ae9f-8693aff98fd7
 #        group: ${spring.application.name}
         file-extension: yml

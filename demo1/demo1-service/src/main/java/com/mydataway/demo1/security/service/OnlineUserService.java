@@ -36,13 +36,13 @@ public class OnlineUserService {
      * @param request /
      */
     public void save(JwtUser jwtUser, String token, HttpServletRequest request){
-        String job = jwtUser.getDept() + "/" + jwtUser.getJob();
+//        String job = jwtUser.getDept() + "/" + jwtUser.getJob();
         String ip = StringUtils.getIp(request);
         String browser = StringUtils.getBrowser(request);
-        String address = StringUtils.getCityInfo(ip);
+//        String address = StringUtils.getCityInfo(ip);
         OnlineUser onlineUser = null;
         try {
-            onlineUser = new OnlineUser(jwtUser.getUsername(), jwtUser.getNickName(), job, browser , ip, address, EncryptUtils.desEncrypt(token), new Date());
+            onlineUser = new OnlineUser(jwtUser.getUsername(), jwtUser.getNickName(), browser , ip, EncryptUtils.desEncrypt(token), new Date());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -116,9 +116,9 @@ public class OnlineUserService {
         for (OnlineUser user : all) {
             Map<String,Object> map = new LinkedHashMap<>();
             map.put("用户名", user.getUserName());
-            map.put("岗位", user.getJob());
+//            map.put("岗位", user.getJob());
             map.put("登录IP", user.getIp());
-            map.put("登录地点", user.getAddress());
+//            map.put("登录地点", user.getAddress());
             map.put("浏览器", user.getBrowser());
             map.put("登录日期", user.getLoginTime());
             list.add(map);
