@@ -1,0 +1,9 @@
+package com.mydataway.demo1.system.repository;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.mydataway.demo1.system.domain.Role;
+import org.apache.ibatis.annotations.Mapper;
+
+@Mapper
+public interface RoleRepository extends BaseMapper<Role> {
+}

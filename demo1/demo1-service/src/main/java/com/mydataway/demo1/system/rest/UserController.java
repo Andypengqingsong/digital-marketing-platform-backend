@@ -21,6 +21,6 @@ public class UserController {
     @RequestMapping("/index")
     public String index(){
         User user = userRepository.selectById(1);
-        return "index......."+user.getName();
+        return "index.......";
     }
 }
